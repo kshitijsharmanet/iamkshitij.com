@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kshitij Sharma — Senior .NET Developer</title>
+<meta name="description" content="Kshitij Sharma — Senior .NET developer with 20+ years of experience building and maintaining production ASP.NET Core applications. AWS Certified Solutions Architect. New Jersey, USA.">
+<meta property="og:title" content="Kshitij Sharma — Senior .NET Developer">
+<meta property="og:description" content="20+ years building, modernizing and supporting production .NET applications.">
+<meta property="og:url" content="https://iamkshitij.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e3a5f'/><text x='50' y='66' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>KS</text></svg>">
+<style>
+  :root {
+    --bg: #fafaf7;
+    --surface: #ffffff;
+    --ink: #1a1f2b;
+    --muted: #5b6475;
+    --line: #e4e4dd;
+    --accent: #1e3a5f;
+    --accent-soft: #e8eef6;
+    --highlight: #c2410c;
+    --radius: 10px;
+    --max: 960px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151c;
+      --surface: #1a1e27;
+      --ink: #e8eaf0;
+      --muted: #9aa3b5;
+      --line: #2a303c;
+      --accent: #8fb4e3;
+      --accent-soft: #1f2a3a;
+      --highlight: #fb923c;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+  .logo { font-weight: 700; color: var(--ink); letter-spacing: -0.02em; }
+  .logo span { color: var(--highlight); }
+  nav ul { list-style: none; display: flex; gap: 24px; font-size: 15px; }
+  nav ul a { color: var(--muted); }
+  nav ul a:hover { color: var(--ink); text-decoration: none; }
+  @media (max-width: 640px) { nav ul { display: none; } }
+
+  /* Hero */
+  header.hero { padding: 96px 0 72px; }
+  .eyebrow {
+    display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--highlight); margin-bottom: 18px;
+  }
+  h1 { font-size: clamp(36px, 6vw, 56px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 750; }
+  h1 .role { display: block; color: var(--muted); font-weight: 500; font-size: 0.55em; margin-top: 12px; letter-spacing: -0.01em; }
+  .lede { max-width: 640px; margin-top: 28px; font-size: 19px; color: var(--muted); }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px; border-radius: var(--radius); font-weight: 600; font-size: 15px;
+    border: 1px solid var(--accent);
+  }
+  .btn.primary { background: var(--accent); color: var(--bg); }
+  .btn.ghost { color: var(--accent); }
+  .btn:hover { text-decoration: none; opacity: 0.88; }
+  .facts { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .fact strong { display: block; font-size: 28px; letter-spacing: -0.02em; }
+  .fact span { font-size: 14px; color: var(--muted); }
+
+  /* Sections */
+  section { padding: 72px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; }
+  h3 { font-size: 20px; letter-spacing: -0.01em; }
+
+  /* Services */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+  .card h3 { font-size: 18px; margin-bottom: 8px; }
+  .card p { color: var(--muted); font-size: 15.5px; }
+
+  /* Experience */
+  .job { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .job:last-child { border-bottom: none; }
+  .job .when { color: var(--muted); font-size: 15px; padding-top: 3px; }
+  .job .org { color: var(--muted); font-size: 15px; margin: 2px 0 12px; }
+  .job ul { padding-left: 20px; color: var(--ink); }
+  .job li { margin-bottom: 8px; font-size: 16px; }
+  .job li::marker { color: var(--highlight); }
+  @media (max-width: 640px) { .job { grid-template-columns: 1fr; gap: 4px; } }
+
+  /* Highlights */
+  .highlight-num { font-size: 13px; font-weight: 700; color: var(--highlight); letter-spacing: 0.06em; margin-bottom: 10px; }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; }
+  .skills h3 { font-size: 15px; margin-bottom: 12px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag { background: var(--accent-soft); color: var(--accent); font-size: 14px; padding: 5px 12px; border-radius: 999px; font-weight: 500; }
+
+  /* Credentials */
+  .creds { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+  .creds .card p { margin-top: 4px; }
+
+  /* Contact */
+  .contact { text-align: center; padding: 96px 0; }
+  .contact h2 { margin-bottom: 16px; }
+  .contact .big { font-size: clamp(28px, 4vw, 40px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; max-width: 640px; margin: 0 auto 16px; }
+  .contact p { color: var(--muted); max-width: 520px; margin: 0 auto 32px; }
+  .contact .cta { justify-content: center; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 14px; color: var(--muted); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Kshitij Sharma<span>.</span></a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Available for freelance &amp; full-time work</span>
+    <h1>Kshitij Sharma
+      <span class="role">Senior .NET Developer · AWS Certified Solutions Architect</span>
+    </h1>
+    <p class="lede">
+      I've spent 20+ years in software development, building, modernizing and supporting production .NET applications that people depend on every day.
+      I can pick up an existing codebase quickly, find the root cause of a problem and ship changes without breaking what already works.
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:kshitij@iamkshitij.com">Get in touch</a>
+      <a class="btn ghost" href="https://github.com/kshitijsharmanet" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><strong>20+ yrs</strong><span>Professional software development</span></div>
+      <div class="fact"><strong>.NET 10</strong><span>Led a full Framework → Core migration</span></div>
+      <div class="fact"><strong>AWS</strong><span>Certified Solutions Architect</span></div>
+      <div class="fact"><strong>New Jersey</strong><span>U.S.-based, Eastern Time</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What I can help with</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Fix &amp; improve existing apps</h3>
+        <p>I fix bugs, turn user feedback into features and clean up the code in ASP.NET Core applications that are already live.</p>
+      </div>
+      <div class="card">
+        <h3>.NET modernization</h3>
+        <p>I move .NET Framework, Web Forms and older .NET Standard code to modern .NET, one project at a time, so the app never has to go offline for a big-bang rewrite.</p>
+      </div>
+      <div class="card">
+        <h3>APIs, data &amp; performance</h3>
+        <p>I build clean, layered APIs with EF Core or Dapper and tune slow queries. I also move long-running work into background queues so the app stays responsive.</p>
+      </div>
+      <div class="card">
+        <h3>Cloud &amp; delivery</h3>
+        <p>I design serverless and queue-based systems on AWS, write infrastructure as code with CloudFormation, SAM or Terraform, and set up CI/CD pipelines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="when">2023 – 2026</div>
+      <div>
+        <h3>Senior Software Development Engineer</h3>
+        <div class="org">Crum &amp; Forster · CFConnect platform · New Jersey</div>
+        <ul>
+          <li>Senior engineer on CFConnect, a web platform that insurance customers and brokers use to view policies, claims and reports.</li>
+          <li>Led the migration from .NET Framework/Standard to .NET Core, moving one project at a time over about 8 months. The platform now runs on .NET 10.</li>
+          <li>Moved report generation from synchronous requests to an asynchronous design with SQS and worker Lambdas, which removed timeouts on large reports.</li>
+          <li>Fixed production race conditions in status workflows by adding a targeted retry mechanism, and built account-level access restrictions for specific business lines.</li>
+          <li>Led AI and automation work and managed an offshore support team, getting them to the point where they could handle production support on their own.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">2017 – 2023</div>
+      <div>
+        <h3>Senior .NET Developer (Contractor)</h3>
+        <div class="org">Crum &amp; Forster · New Jersey</div>
+        <ul>
+          <li>Took the Third-Party Deductible process off the mainframe by building a .NET sync service and SSIS jobs to replace it.</li>
+          <li>Worked with the claims migration team on data conversion and mapping across Oracle and Snowflake.</li>
+          <li>Migrated older ASP.NET Web Forms applications to .NET Core.</li>
+          <li>Built and maintained PDF reports with jsreport, including moving the templates to a new rendering engine.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">2010 – 2017</div>
+      <div>
+        <h3>Software Engineer</h3>
+        <div class="org">Fulcrum Worldwide · Pune, India</div>
+        <ul>
+          <li>Built and supported ASP.NET applications for insurance clients, starting a long-term engagement with Crum &amp; Forster that continued after I moved to the U.S. in 2017.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Tech stack</h2>
+    <div class="skills">
+      <div>
+        <h3>Back end</h3>
+        <div class="tags">
+          <span class="tag">C#</span><span class="tag">.NET 10</span><span class="tag">ASP.NET Core</span>
+          <span class="tag">ASP.NET MVC</span><span class="tag">Web Forms</span><span class="tag">REST APIs</span>
+        </div>
+      </div>
+      <div>
+        <h3>Data</h3>
+        <div class="tags">
+          <span class="tag">EF Core</span><span class="tag">Dapper</span><span class="tag">Oracle</span>
+          <span class="tag">Snowflake</span><span class="tag">SSIS</span>
+        </div>
+      </div>
+      <div>
+        <h3>Cloud &amp; DevOps</h3>
+        <div class="tags">
+          <span class="tag">AWS Lambda</span><span class="tag">SQS</span><span class="tag">EventBridge</span>
+          <span class="tag">CloudFormation / SAM</span><span class="tag">Terraform</span><span class="tag">GitLab CI/CD</span>
+        </div>
+      </div>
+      <div>
+        <h3>Auth &amp; reporting</h3>
+        <div class="tags">
+          <span class="tag">Auth0</span><span class="tag">jsreport</span><span class="tag">PDF generation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <h2>Certifications &amp; education</h2>
+    <div class="creds">
+      <div class="card">
+        <h3>AWS Certified Solutions Architect</h3>
+        <p>Amazon Web Services</p>
+      </div>
+      <div class="card">
+        <h3>PG Diploma in Advanced Computing</h3>
+        <p>C-DAC</p>
+      </div>
+      <div class="card">
+        <h3>B.Sc. Computers, Computer Applications &amp; Maths</h3>
+        <p>MJP Rohilkhand University</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <div class="big">Have a .NET app that needs fixes or new features?</div>
+    <p>Tell me what's going on and I'll get back to you within a day with how I'd approach it.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:kshitij@iamkshitij.com">kshitij@iamkshitij.com</a>
+      <a class="btn ghost" href="https://github.com/kshitijsharmanet" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Kshitij Sharma</span>
+    <span>Edison, New Jersey</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
